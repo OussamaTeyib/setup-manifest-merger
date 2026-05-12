@@ -1,0 +1,41 @@
+{
+  "name": "setup-manifest-merger",
+  "version": "1.0.0",
+  "description": "GitHub Action to set up Android Manifest Merger",
+  "main": "dist/index.js",
+  "packageManager": "npm@11.14.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "package": "ncc build src/main.ts --source-map --license licenses.txt --out dist",
+    "all": "npm run build && npm run package",
+    "dev": "tsc --watch",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actions/typescript-action.git"
+  },
+  "keywords": [
+    "github-action",
+    "android",
+    "manifest",
+    "manifest-merger"
+  ],
+  "author": "OussamaTeyib",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "@actions/exec": "^3.0.0",
+    "@actions/io": "^3.0.2",
+    "@actions/tool-cache": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "@vercel/ncc": "^0.38.4",
+    "typescript": "^6.0.3"
+  }
+}

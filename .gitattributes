@@ -1,0 +1,5 @@
+# Normalize all text files to LF
+* text=auto eol=lf
+
+# Exclude build output from diffs
+dist/** -diff linguist-generated=true 

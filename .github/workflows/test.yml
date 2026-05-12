@@ -1,0 +1,44 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      # Test with default version
+      - name: Set up Manifest Merger (default)
+        uses: ./
+
+      - name: Test manifest-merger (default)
+        shell: bash
+        run: manifest-merger
+
+      # Test with pinned version
+      - name: Set up Manifest Merger (pinned)
+        uses: ./
+        with:
+          version: '30.0.1'
+
+      - name: Test manifest-merger (pinned)
+        shell: bash
+        run: manifest-merger
