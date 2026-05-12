@@ -31,7 +31,7 @@ jobs:
 
       - name: Test manifest-merger (default)
         shell: bash
-        run: manifest-merger
+        run: manifest-merger --usage
 
       # Test with pinned version
       - name: Set up Manifest Merger (pinned)
@@ -41,4 +41,4 @@ jobs:
 
       - name: Test manifest-merger (pinned)
         shell: bash
-        run: manifest-merger
+        run: manifest-merger --usage
