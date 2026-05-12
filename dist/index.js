@@ -34687,12 +34687,15 @@ const promises_namespaceObject = require("fs/promises");
 
 
 
+// GitHub repository metadata for the Android Manifest Merger release.
 const OWNER = 'distriqt';
 const REPO = 'android-manifest-merger';
 const GITHUB_LATEST_RELEASE = `https://api.github.com/repos/${OWNER}/${REPO}/releases/latest`;
+// Normalize a GitHub release tag by removing a leading `v`
 function normalizeVersion(tagName) {
     return tagName.replace(/^v/, '');
 }
+// Fetch the latest release metadata from GitHub and return the normalized version.
 async function getLatestVersion() {
     const response = await fetch(GITHUB_LATEST_RELEASE, {
         headers: {
@@ -34709,20 +34712,24 @@ async function getLatestVersion() {
     }
     return normalizeVersion(data.tag_name);
 }
+// Create the contents of the Unix wrapper script for `manifest-merger`.
 function getUnixWrapperContents(jarName) {
     return `#!/bin/sh
 exec java -jar "$(dirname "$0")/${jarName}" "$@"
 `;
 }
+// Create the contents of the Windows wrapper script for `manifest-merger.cmd`.
 function getWindowsWrapperContents(jarName) {
     return ['@echo off', 'set DIR=%~dp0', `java -jar "%DIR%\\${jarName}" %*`].join('\r\n');
 }
+// Write wrapper scripts for both Unix and Windows platforms.
 async function writeWrapperScripts(installDir, jarName) {
     const unixScriptPath = external_path_namespaceObject.join(installDir, 'manifest-merger');
     const windowsScriptPath = external_path_namespaceObject.join(installDir, 'manifest-merger.cmd');
     await (0,promises_namespaceObject.writeFile)(unixScriptPath, getUnixWrapperContents(jarName), { encoding: 'utf8', mode: 0o755 });
     await (0,promises_namespaceObject.writeFile)(windowsScriptPath, getWindowsWrapperContents(jarName), { encoding: 'utf8' });
 }
+// Main action entry point.
 async function run() {
     try {
         let version = getInput('version');
