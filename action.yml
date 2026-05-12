@@ -1,4 +1,4 @@
-name: 'Setup Manifest Merger'
+name: 'Setup Android Manifest Merger'
 description: 'Downloads Android Manifest Merger by distriqt and adds a wrapper launcher to PATH.'
 author: 'OussamaTeyib'
 
