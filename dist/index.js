@@ -34690,27 +34690,18 @@ const promises_namespaceObject = require("fs/promises");
 // GitHub repository metadata for the Android Manifest Merger release.
 const OWNER = 'distriqt';
 const REPO = 'android-manifest-merger';
-const GITHUB_LATEST_RELEASE = `https://api.github.com/repos/${OWNER}/${REPO}/releases/latest`;
-// Normalize a GitHub release tag by removing a leading `v`
-function normalizeVersion(tagName) {
-    return tagName.replace(/^v/, '');
-}
 // Fetch the latest release metadata from GitHub and return the normalized version.
 async function getLatestVersion() {
-    const response = await fetch(GITHUB_LATEST_RELEASE, {
-        headers: {
-            accept: 'application/vnd.github+json',
-            'user-agent': 'setup-manifest-merger-action'
-        }
-    });
-    if (!response.ok) {
-        throw new Error(`Failed to fetch latest release: ${response.status} ${response.statusText}`);
+    const response = await fetch(`https://github.com/${OWNER}/${REPO}/releases/latest`, { redirect: 'manual' });
+    const location = response.headers.get('location');
+    if (!location) {
+        throw new Error('Unable to determine latest release location from GitHub response');
     }
-    const data = (await response.json());
-    if (!data.tag_name) {
-        throw new Error('Unable to determine latest release tag from GitHub response');
+    const tag = location.split('/').pop();
+    if (!tag) {
+        throw new Error('Unable to extract version tag from GitHub redirect location');
     }
-    return normalizeVersion(data.tag_name);
+    return tag.replace(/^v/, '');
 }
 // Create the contents of the Unix wrapper script for `manifest-merger`.
 function getUnixWrapperContents(jarName) {
