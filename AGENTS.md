@@ -96,6 +96,7 @@ npm run format
 ### Build process
 
 The build process uses:
+
 - **TypeScript** for type checking (`npm run build`)
 - **ncc** (Next.js Compiler) to compile and bundle `src/main.ts` into a single `dist/index.js` file
 - The `dist/` folder must be committed as GitHub Actions runs the compiled bundle directly
@@ -165,7 +166,6 @@ All workflows are defined in `.github/workflows/`.
 ### `release.yml` — triggered on version tag push
 
 Creates a GitHub Release with generated release notes.
-
 
 ---
 
