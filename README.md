@@ -30,10 +30,10 @@ A GitHub Action that downloads [Android Manifest Merger by distriqt](https://git
 # Install dependencies
 npm install
 
-# Build the project (TypeScript type checking)
+# Build the project
 npm run build
 
-# Package the project (bundle with ncc)
+# Package the project
 npm run package
 
 # Build and package in one command
