@@ -66,7 +66,7 @@ setup-manifest-merger/
 | Tool        | Version                      |
 |-------------|------------------------------|
 | Node.js     | >=24                         |
-| npm         | 11.15.0                       |
+| npm         | 11.15.0                      |
 
 ### npm scripts
 
