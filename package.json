@@ -1,6 +1,6 @@
 {
   "name": "setup-manifest-merger",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "GitHub Action to set up Android Manifest Merger",
   "main": "dist/index.js",
   "packageManager": "npm@11.15.0",
@@ -17,13 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/OussamaTeyib/setup-manifest-merger.git"
   },
   "keywords": [
     "github-action",
     "android",
-    "manifest",
-    "manifest-merger"
+    "android-manifest",
+    "manifest-merger",
+    "typescript",
+    "setup"
   ],
   "author": "OussamaTeyib",
   "license": "MIT",
