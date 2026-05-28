@@ -19,13 +19,13 @@
 
 **setup-manifest-merger** is a GitHub Action that downloads Android Manifest Merger from GitHub releases and adds it to PATH. By default, it automatically fetches the latest release; users can optionally pin a specific version.
 
-| Property       | Value                      |
-| -------------- | -------------------------- |
-| Language       | TypeScript                 |
-| Build system   | npm / tsc / ncc            |
-| Runtime        | Node.js 24                 |
-| Version        | 1.0.2                      |
-| License        | MIT                        |
+| Property     | Value           |
+| ------------ | ------------=---|
+| Language     | TypeScript      |
+| Build system | npm / tsc / ncc |
+| Runtime      | Node.js 24      |
+| Version      | 1.0.2           |
+| License      | MIT             |
 
 ---
 
@@ -63,10 +63,10 @@ setup-manifest-merger/
 
 ### Prerequisites
 
-| Tool        | Version                      |
-|-------------|------------------------------|
-| Node.js     | >=24                         |
-| npm         | 11.15.0                      |
+| Tool    | Version |
+| ------- | ------- |
+| Node.js | >=24    |
+| npm     |         |
 
 ### npm scripts
 
