@@ -1,6 +1,7 @@
 # setup-manifest-merger
 
 [![Build](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/build.yml/badge.svg)](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/build.yml)
+[![CodeQL](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/codeql.yml/badge.svg)](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/codeql.yml)
 [![Test](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/test.yml/badge.svg)](https://github.com/OussamaTeyib/setup-manifest-merger/actions/workflows/test.yml)
 
 A GitHub Action that downloads [Android Manifest Merger by distriqt](https://github.com/distriqt/android-manifest-merger) from GitHub releases and adds a `manifest-merger` launcher to `PATH`.
