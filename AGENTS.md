@@ -38,6 +38,7 @@ setup-manifest-merger/
 │   ├── workflows/
 │   │   ├── build.yml          # CI: build and validate dist/
 │   │   ├── release.yml        # CD: create GitHub releases
+|   |   ├── codeql.yml         # CI: Run static analysis
 │   │   └── test.yml           # Test the action on multiple platforms
 │   ├── CODE_OF_CONDUCT.md
 │   ├── CONTRIBUTING.md
