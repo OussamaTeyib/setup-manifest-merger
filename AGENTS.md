@@ -166,6 +166,10 @@ All workflows are defined in `.github/workflows/`.
 
 Creates a GitHub Release with generated release notes.
 
+### `codeql.yml`
+
+Runs GitHub’s CodeQL static analysis security scanning workflow.
+
 ---
 
 ## 6. Important Constraints
