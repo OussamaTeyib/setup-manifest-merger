@@ -39,7 +39,6 @@ setup-manifest-merger/
 │   │   ├── build.yml          # CI: build and validate dist/
 │   │   ├── release.yml        # CD: create GitHub releases
 │   │   └── test.yml           # Test the action on multiple platforms
-│   ├── CODEOWNERS
 │   ├── CODE_OF_CONDUCT.md
 │   ├── CONTRIBUTING.md
 │   ├── pull_request_template.md
