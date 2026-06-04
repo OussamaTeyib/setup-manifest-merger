@@ -98,9 +98,9 @@ npm run format
 
 The build process uses:
 
-- **TypeScript** for type checking (`npm run build`)
-- **ncc** (Next.js Compiler) to compile and bundle `src/main.ts` into a single `dist/index.js` file
-- The `dist/` folder must be committed as GitHub Actions runs the compiled bundle directly
+- **TypeScript** for type checking (`npm run build`).
+- **ncc** (Next.js Compiler) to compile and bundle `src/main.ts` into a single `dist/index.js` file.
+- The `dist/` folder must be committed as GitHub Actions runs the compiled bundle directly.
 
 Use `npm run build` for type checking only, `npm run package` for compilation and bundling, or `npm run all` for both steps.
 
@@ -115,21 +115,21 @@ Use `npm run build` for type checking only, `npm run package` for compilation an
 
 ### TypeScript code (`src/`)
 
-- **Style**: Follow official TypeScript style and ESLint rules
-- Use `async/await` for asynchronous operations
-- Handle errors properly with try/catch blocks
-- Use meaningful variable and function names
-- Add JSDoc comments for public functions
+- **Style**: Follow official TypeScript style and ESLint rules.
+- Use `async/await` for asynchronous operations.
+- Handle errors properly with try/catch blocks.
+- Use meaningful variable and function names.
+- Add JSDoc comments for public functions.
 
 ### Configuration files
 
-- Use JSON for configuration files where possible
-- Follow standard naming conventions
+- Use JSON for configuration files where possible.
+- Follow standard naming conventions.
 
 ### Git
 
-- Always commit the `dist/` folder after building
-- Use conventional commit messages
+- Always commit the `dist/` folder after building.
+- Use conventional commit messages.
 
 ---
 
