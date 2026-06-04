@@ -50,6 +50,7 @@ setup-manifest-merger/
 ├── .gitattributes
 ├── action.yml                # GitHub Action metadata
 ├── package.json              # Node.js dependencies and scripts
+├── package-lock.json         # Locked dependency versions
 ├── tsconfig.json             # TypeScript configuration
 ├── renovate.json             # Dependency update automation
 ├── LICENSE
@@ -141,35 +142,42 @@ All workflows are defined in `.github/workflows/`.
 - Push to `main`
 - Push of a `v*.*.*` tag
 - Pull requests targeting `main`
+- Manual dispatch
 
 **Steps summary:**
 
-1. Check out code
-2. Set up Node.js 24
-3. Install dependencies (`npm ci`)
-4. Build the project (`npm run build`)
-5. Ensure `dist/` is up to date (fails if not committed)
+1. Check out code.
+2. Set up Node.js 24.
+3. Install dependencies.
+4. Build the project.
+5. Ensure `dist/` is up to date (fails if not committed).
 
 ### `test.yml` — triggered on
 
 - Push to `main`
 - Push of a `v*.*.*` tag
 - Pull requests targeting `main`
+- Manual dispatch
 
 **Steps summary:**
 
-1. Check out code
-2. Test the action on Ubuntu, macOS, and Windows
-3. Install AAPT2 with default and pinned versions
-4. Verify `manifest-merger` works
+1. Check out code.
+2. Test the action on Ubuntu, macOS, and Windows.
+3. Install AAPT2 with default and pinned versions.
+4. Verify `manifest-merger` works.
 
 ### `release.yml` — triggered on version tag push
 
 Creates a GitHub Release with generated release notes.
 
-### `codeql.yml`
+### `codeql.yml` — triggered on
 
-Runs GitHub’s CodeQL static analysis security scanning workflow.
+- Push to `main`
+- Push of a `v*.*.*` tag
+- Pull requests targeting `main`
+- Manual dispatch
+
+Runs GitHub's CodeQL static analysis on `javascript-typescript`.
 
 ---
 
