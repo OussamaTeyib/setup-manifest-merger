@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7.0.0
 
       # Test with default version
       - name: Set up Manifest Merger (default)
