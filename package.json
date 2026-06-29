@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "GitHub Action to set up Android Manifest Merger",
   "main": "dist/index.js",
-  "packageManager": "npm@11.17.0",
+  "packageManager": "npm@11.18.0",
   "engines": {
     "node": ">=24"
   },
